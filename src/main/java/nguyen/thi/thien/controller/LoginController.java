@@ -15,25 +15,6 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api")
 public class LoginController {
 
-    @Autowired
-    private AuthenticationManager authenticationManager;
-
-    @Autowired
-    private JwtConfig tokenJwtConfig;
-
-    @PostMapping("/login")
-    public LoginResponse authenticatedUser(@RequestBody LoginRequest loginRequest) {
-        Authentication authentication = authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(
-                        loginRequest.getUsername(),
-                        loginRequest.getPassword()
-                )
-        );
-        SecurityContextHolder.getContext().setAuthentication(authentication);
-        String jwt = tokenJwtConfig.generateToken((CustomedUserDetails) authentication.getPrincipal());
-        return new LoginResponse(jwt);
-    }
-
     @GetMapping("/a")
     public String a() {
         return "hello";

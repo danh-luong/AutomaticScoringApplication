@@ -65,7 +65,13 @@
             <artifactId>spring-security-web</artifactId>
             <version>5.3.4.RELEASE</version>
         </dependency>
-    </dependencies>
+		<!-- https://mvnrepository.com/artifact/com.auth0/auth0-spring-security-api -->
+		<dependency>
+			<groupId>com.auth0</groupId>
+			<artifactId>auth0-spring-security-api</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+	</dependencies>
 
 	<build>
 		<plugins>
